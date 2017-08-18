@@ -1,13 +1,13 @@
 ---
-title: "Needs Asssessment CCR Quantiative"
+  title: "Needs Asssessment CCR Quantiative"
 output: html_document
 ---
-
-```{r setup, include=FALSE}
+  
+  ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 Steps: 
-1. Get rid of extra data for each 
+  1. Get rid of extra data for each 
 2. Combine the relevant data
 3. Grab demographics gender, degree, type of teacher, race
 4. CCR grab all the and transform to numbers
@@ -69,7 +69,7 @@ Now MCCSC SEL
 ```{r}
 #setwd("~/Desktop/QualData")
 #mccsc = read.csv("MCCSCStaffSurvey.csv", header = TRUE)
-mccsc = mccsc[-c(1:2),]
+mccsc = mccsc[-c(1:11),]
 
 mccsc1 = mccsc[c("Q9_1", "Q9_2", "Q9_3", "Q9_4", "Q9_5", "Q9_6")]
 eth = mccsc[c("Q30")]
@@ -119,7 +119,7 @@ bothQuan = na.omit(bothQuan)
 bothQuan = as.data.frame(bothQuan)
 dim(bothQuan)
 meansBoth = apply(bothQuan, 2, mean)
-meansBoth
+round(meansBoth,2)
 
 # Both for the different breakdowns.  Gender first
 bothAll = as.data.frame(rbind(mccsc, rbbcsc))
@@ -154,7 +154,7 @@ head(bothGenderMale)
 write.csv(bothGenderMale, "bothGenderMale.csv", row.names = FALSE)
 bothGenderMale = read.csv("bothGenderMale.csv", header = TRUE)
 meansBothGenderMale = apply(bothGenderMale, 2, mean)
-meansBothGenderMale
+round(meansBothGenderMale,2)
 
 
 
@@ -201,7 +201,7 @@ bothGenderFemale = as.data.frame(bothGenderFemale)
 bothGenderFemale = na.omit(bothGenderFemale)
 typeof(bothGenderFemale)
 meansbothGenderFemale = apply(bothGenderFemale, 2, mean)
-meansbothGenderFemale
+round(meansbothGenderFemale,2)
 ```
 This is for White.  
 ```{r}
@@ -245,7 +245,7 @@ bothGenderFemale = as.data.frame(bothGenderFemale)
 bothGenderFemale = na.omit(bothGenderFemale)
 typeof(bothGenderFemale)
 meansbothGenderFemale = apply(bothGenderFemale, 2, mean)
-meansbothGenderFemale
+round(meansbothGenderFemale,2)
 ```
 This is for non-white
 ```{r}
@@ -289,7 +289,7 @@ bothGenderFemale = as.data.frame(bothGenderFemale)
 bothGenderFemale = na.omit(bothGenderFemale)
 typeof(bothGenderFemale)
 meansbothGenderFemale = apply(bothGenderFemale, 2, mean)
-meansbothGenderFemale
+round(meansbothGenderFemale,2)
 ```
 This is for a Master's
 ```{r}
@@ -334,7 +334,7 @@ bothGenderFemale = as.data.frame(bothGenderFemale)
 bothGenderFemale = na.omit(bothGenderFemale)
 typeof(bothGenderFemale)
 meansbothGenderFemale = apply(bothGenderFemale, 2, mean)
-meansbothGenderFemale
+round(meansbothGenderFemale,2)
 ```
 This is for a Bachelors
 ```{r}
@@ -379,7 +379,7 @@ bothGenderFemale = as.data.frame(bothGenderFemale)
 bothGenderFemale = na.omit(bothGenderFemale)
 typeof(bothGenderFemale)
 meansbothGenderFemale = apply(bothGenderFemale, 2, mean)
-meansbothGenderFemale
+round(meansbothGenderFemale,2)
 ```
 This is for primary teachers
 ```{r}
@@ -424,7 +424,7 @@ bothGenderFemale = as.data.frame(bothGenderFemale)
 bothGenderFemale = na.omit(bothGenderFemale)
 typeof(bothGenderFemale)
 meansbothGenderFemale = apply(bothGenderFemale, 2, mean)
-meansbothGenderFemale
+round(meansbothGenderFemale,2)
 ```
 This is for secondary teachers
 ```{r}
@@ -469,7 +469,7 @@ bothGenderFemale = as.data.frame(bothGenderFemale)
 bothGenderFemale = na.omit(bothGenderFemale)
 typeof(bothGenderFemale)
 meansbothGenderFemale = apply(bothGenderFemale, 2, mean)
-meansbothGenderFemale
+round(meansbothGenderFemale,2)
 ```
 This is for Administrator
 ```{r}
